@@ -5,7 +5,6 @@ import cors from 'cors';
 import multer from 'multer';
 import path from 'path';
 import User from '../backend/models/userModel.js';
-import Job from '../backend/models/jobModel.js';
 import { fileURLToPath } from 'url';
 
 dotenv.config();

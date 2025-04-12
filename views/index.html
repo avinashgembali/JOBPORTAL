@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Job Portal</title>
   <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Check if the user is logged in on page load
+    window.onload = () => {
+      const user = localStorage.getItem('user');
+      if (!user) {
+        // If user is not logged in, show login link
+        document.getElementById('login-link').style.display = 'inline';
+        document.getElementById('logout-link').style.display = 'none';
+      } else {
+        // If user is logged in, show logout link and user's email
+        document.getElementById('login-link').style.display = 'none';
+        document.getElementById('logout-link').style.display = 'inline';
+        document.getElementById('user-email').textContent = user;
+      }
+    }
+
+    // Handle logout
+    function handleLogout() {
+      localStorage.removeItem('user'); // Remove user from localStorage
+      window.location.href = 'index.html'; // Redirect to homepage
+    }
+  </script>
 </head>
 <body>
   <!-- Navbar -->
@@ -15,7 +37,11 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="/jobs.html">Jobs</a></li>
         <li><a href="profile.html">Profile</a></li>
-        <li><a href="logout.html">Logout</a></li>
+
+        <!-- Show Login or Logout links based on localStorage -->
+        <li id="login-link" style="display:none;"><a href="login.html">Login</a></li>
+        <li id="logout-link" style="display:none;"><a href="javascript:void(0)" onclick="handleLogout()">Logout</a></li>
+        <li id="user-email" style="display:none;"></li>
       </ul>
     </div>
   </nav>
