@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs - Job Portal</title>
+  <link rel="stylesheet" href="/jobs.css">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .apply-btn {
+      background-color: green;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .apply-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <h1 class="logo">Job Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jobs-container">
+    <!-- Left Side: Job Filter -->
+    <aside class="filter-sidebar">
+      <h3>Filter Jobs</h3>
+      <form id="job-filter">
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="all">All Categories</option>
+          <option value="tech">Technology</option>
+          <option value="marketing">Marketing</option>
+          <option value="hr">Human Resources</option>
+          <option value="sales">Sales</option>
+          <option value="finance">Finance</option>
+        </select>
+
+        <label for="location">Location</label>
+        <select id="location" name="location">
+          <option value="all">All Locations</option>
+          <option value="remote">Remote</option>
+          <option value="onsite">Onsite</option>
+        </select>
+
+        <button type="submit" class="apply-btn">Apply Filters</button>
+      </form>
+    </aside>
+
+    <!-- Right Side: Job Listings -->
+    <section class="job-listings">
+      <h2>Available Jobs</h2>
+
+      <!-- Each job container includes a unique identifier in data-id attribute -->
+      <div class="job" data-id="software-engineer" data-category="tech" data-location="remote">
+        <h3>Software Engineer</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> We are looking for a talented software engineer to join our team.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="marketing-specialist" data-category="marketing" data-location="onsite">
+        <h3>Marketing Specialist</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Join our marketing team and help grow our brand.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="full-stack-developer" data-category="tech" data-location="onsite">
+        <h3>Full Stack Developer</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Build and maintain full-stack applications for our growing tech team.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="hr-manager" data-category="hr" data-location="remote">
+        <h3>HR Manager</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> We are looking for an experienced HR manager to lead recruitment.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="financial-analyst" data-category="finance" data-location="onsite">
+        <h3>Financial Analyst</h3>
+        <p><strong>Category:</strong> Finance</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Analyze financial data and help guide investment decisions.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="sales-executive" data-category="sales" data-location="remote">
+        <h3>Sales Executive</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Responsible for generating new business opportunities.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="data-scientist" data-category="tech" data-location="remote">
+        <h3>Data Scientist</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Analyze and interpret complex data to drive business decisions.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="content-writer" data-category="marketing" data-location="onsite">
+        <h3>Content Writer</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Write and edit engaging content for our marketing materials.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="talent-acquisition" data-category="hr" data-location="onsite">
+        <h3>Talent Acquisition Specialist</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Oversee the hiring process and collaborate with departments.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="sales-manager" data-category="sales" data-location="onsite">
+        <h3>Sales Manager</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Manage the sales team and drive revenue generation.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="cloud-architect" data-category="tech" data-location="remote">
+        <h3>Cloud Architect</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Design and manage cloud computing solutions for clients.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="seo-specialist" data-category="marketing" data-location="remote">
+        <h3>SEO Specialist</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Optimize content for search engines to increase visibility.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="investment-analyst" data-category="finance" data-location="remote">
+        <h3>Investment Analyst</h3>
+        <p><strong>Category:</strong> Finance</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Provide investment recommendations and financial insights.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="hr-coordinator" data-category="hr" data-location="remote">
+        <h3>HR Coordinator</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Assist with day-to-day HR tasks, including employee relations.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Job Portal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Function to update applied buttons from localStorage on page load
+    function updateAppliedButtons() {
+      const appliedJobs = JSON.parse(localStorage.getItem("appliedJobs")) || [];
+      document.querySelectorAll('.job').forEach(job => {
+        const jobId = job.getAttribute('data-id');
+        if (appliedJobs.includes(jobId)) {
+          const btn = job.querySelector('.apply-btn');
+          btn.textContent = "Applied";
+          btn.style.backgroundColor = "blue";
+          btn.disabled = true;
+        }
+      });
+    }
+
+    // Filter functionality
+    document.getElementById('job-filter').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const categoryFilter = document.getElementById('category').value;
+      const locationFilter = document.getElementById('location').value;
+
+      document.querySelectorAll('.job').forEach(job => {
+        const jobCategory = job.getAttribute('data-category');
+        const jobLocation = job.getAttribute('data-location');
+
+        if ((categoryFilter === 'all' || categoryFilter === jobCategory) &&
+            (locationFilter === 'all' || locationFilter === jobLocation)) {
+          job.style.display = 'block';
+        } else {
+          job.style.display = 'none';
+        }
+      });
+    });
+
+    // Apply button functionality: alert details, update button appearance, persist state,
+    // and call the backend to record the application.
+    const applyButtons = document.querySelectorAll('.job-listings .job .apply-btn');
+    applyButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        const jobContainer = this.closest('.job');
+        const jobId = jobContainer.getAttribute('data-id');
+        const jobTitle = jobContainer.querySelector('h3').textContent;
+        const jobCategory = jobContainer.getAttribute('data-category');
+        const jobLocation = jobContainer.getAttribute('data-location');
+        // Assuming the third paragraph holds the description
+        const jobDescription = jobContainer.querySelectorAll('p')[2].textContent;
+
+        alert(`You have applied for ${jobTitle}.\nCategory: ${jobCategory}\nLocation: ${jobLocation}\nDescription: ${jobDescription}`);
+
+        // Update the button's UI
+        this.style.backgroundColor = 'blue';
+        this.textContent = "Applied";
+        this.disabled = true;
+
+        // Save applied job's ID in localStorage so it's persisted on reload
+        let appliedJobs = JSON.parse(localStorage.getItem("appliedJobs")) || [];
+        if (!appliedJobs.includes(jobId)) {
+          appliedJobs.push(jobId);
+          localStorage.setItem("appliedJobs", JSON.stringify(appliedJobs));
+        }
+
+        // Retrieve userEmail stored on login
+        const userEmail = localStorage.getItem("userEmail");
+        if (!userEmail) {
+          alert("User not logged in!");
+          return;
+        }
+
+        // Call the backend endpoint to record the application.
+        
+      });
+    });
+
+    // Update buttons on page load
+    document.addEventListener('DOMContentLoaded', updateAppliedButtons);
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Portal - Profile</title>
+  <link rel="stylesheet" href="/profile.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <h1 class="logo">Job Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="profile-container">
+    <h2>Your Profile</h2>
+    <form action="/update-profile" method="POST" enctype="multipart/form-data">
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="input-group">
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+      </div>
+
+      <div class="input-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="resume">Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf">
+        <small>(Leave blank if not updating)</small>
+      </div>
+
+      <div class="input-group">
+        <label for="role">Preferred Role</label>
+        <select id="role" name="role" required>
+          <option value="">Select</option>
+          <option value="Web Developer">Web Developer</option>
+          <option value="Backend Developer">Backend Developer</option>
+          <option value="Data Analyst">Data Analyst</option>
+        </select>
+      </div>
+
+      <button type="submit">Update Profile</button>
+    </form>
+
+    <div class="back-link">
+      <a href="index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Job Portal. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ JS to auto-fill the form -->
+  <script>
+    const userEmail = localStorage.getItem("userEmail");
+
+    async function fetchUserProfile() {
+      if (!userEmail) {
+        alert("User not logged in.");
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/profile?email=${userEmail}`);
+        const data = await res.json();
+
+        if (res.ok) {
+          document.getElementById("name").value = data.name;
+          document.getElementById("email").value = data.email;
+          document.getElementById("password").value = data.password;
+          document.getElementById("contact").value = data.contact;
+          document.getElementById("address").value = data.address;
+          document.getElementById("role").value = data.role;
+        } else {
+          alert(data.error || "Could not fetch profile");
+        }
+      } catch (err) {
+        console.error("Error:", err);
+        alert("Failed to fetch user profile");
+      }
+    }
+
+    window.onload = fetchUserProfile;
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* Jobs Page Styles */
+.jobs-container {
+    display: flex;
+    margin: 2rem;
+    gap: 2rem;
+    padding-bottom: 2rem; /* Prevent footer from overlapping content */
+  }
+  
+  .filter-sidebar {
+    width: 25%;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+  
+  .filter-sidebar h3 {
+    margin-top: 0;
+  }
+  
+  .filter-sidebar label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .filter-sidebar select, .filter-sidebar button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .job-listings {
+    width: 70%;
+  }
+  
+  .job {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .job p {
+    font-size: 1rem;
+  }
+  
+  .apply-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  
+  .apply-btn:hover {
+    background-color: #218838;
+  }
+  
