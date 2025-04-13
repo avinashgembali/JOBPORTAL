@@ -118,11 +118,11 @@ app.post('/update-profile', upload.single('resume'), async (req, res) => {
     }
 
     // Update user fields
-    user.name = name || user.name;
-    user.password = password || user.password;
-    user.contact = contact || user.contact;
-    user.address = address || user.address;
-    user.role = role || user.role;
+    user.name = name
+    user.password = password 
+    user.contact = contact 
+    user.address = address 
+    user.role = role 
 
     if (updatedResume) {
       user.resume = updatedResume;
