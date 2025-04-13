@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Portal - Profile</title>
   <link rel="stylesheet" href="/profile.css">
   <link rel="stylesheet" href="/styles.css">
@@ -13,18 +13,15 @@
   <nav>
     <div class="nav-container">
       <h1 class="logo">Job Portal</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="logout.html">Logout</a></li>
+      <ul class="nav-links" id="navLinks">
+        <!-- Navigation items will be injected dynamically -->
       </ul>
     </div>
   </nav>
 
   <div class="profile-container">
     <h2>Your Profile</h2>
-    <form action="/update-profile" method="POST" enctype="multipart/form-data">
+    <form id="profileForm" action="/update-profile" method="POST" enctype="multipart/form-data">
       <div class="input-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
@@ -78,16 +75,9 @@
     <p>&copy; 2025 Job Portal. All rights reserved.</p>
   </footer>
 
-  <!-- ✅ JS to auto-fill the form -->
   <script>
-    const userEmail = localStorage.getItem("userEmail");
-
-    async function fetchUserProfile() {
-      if (!userEmail) {
-        alert("User not logged in.");
-        return;
-      }
-
+    // Function to fetch the user's profile information using an API call
+    async function fetchUserProfile(userEmail) {
       try {
         const res = await fetch(`/api/profile?email=${userEmail}`);
         const data = await res.json();
@@ -100,15 +90,46 @@
           document.getElementById("address").value = data.address;
           document.getElementById("role").value = data.role;
         } else {
-          alert(data.error || "Could not fetch profile");
+          alert(data.error || "Could not fetch profile.");
         }
       } catch (err) {
         console.error("Error:", err);
-        alert("Failed to fetch user profile");
+        alert("Failed to fetch user profile.");
       }
     }
 
-    window.onload = fetchUserProfile;
+    // Logout function: clears user data and redirects to login page
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    }
+
+    // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.getElementById("navLinks");
+      const userEmail = localStorage.getItem("user");
+
+      // If a user is logged in, show Home, Jobs, Profile, and Logout; and load profile data
+      if (userEmail) {
+        navLinks.innerHTML = `
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        `;
+        // Fetch and auto-fill profile information
+        fetchUserProfile(userEmail);
+      } else {
+        // If no user is logged in, show Home, Login, and Register links
+        navLinks.innerHTML = `
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        `;
+        // Optionally, you can also clear or disable the form if you don't want non-logged in users to see it.
+        document.getElementById("profileForm").style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>

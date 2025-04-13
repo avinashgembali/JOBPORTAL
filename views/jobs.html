@@ -1,3 +1,4 @@
+<!-- jobs.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +28,8 @@
   <nav>
     <div class="nav-container">
       <h1 class="logo">Job Portal</h1>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="logout.html">Logout</a></li>
+      <ul class="nav-links" id="navLinks">
+        <!-- Nav items will be injected dynamically -->
       </ul>
     </div>
   </nav>
@@ -49,6 +47,7 @@
           <option value="hr">Human Resources</option>
           <option value="sales">Sales</option>
           <option value="finance">Finance</option>
+          <option value="dummy">Dummy</option>
         </select>
 
         <label for="location">Location</label>
@@ -56,6 +55,7 @@
           <option value="all">All Locations</option>
           <option value="remote">Remote</option>
           <option value="onsite">Onsite</option>
+          <option value="dummy">Dummy</option>
         </select>
 
         <button type="submit" class="apply-btn">Apply Filters</button>
@@ -66,7 +66,7 @@
     <section class="job-listings">
       <h2>Available Jobs</h2>
 
-      <!-- Each job container includes a unique identifier in data-id attribute -->
+      <!-- Real Job Listings -->
       <div class="job" data-id="software-engineer" data-category="tech" data-location="remote">
         <h3>Software Engineer</h3>
         <p><strong>Category:</strong> Technology</p>
@@ -91,91 +91,164 @@
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="hr-manager" data-category="hr" data-location="remote">
-        <h3>HR Manager</h3>
-        <p><strong>Category:</strong> Human Resources</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> We are looking for an experienced HR manager to lead recruitment.</p>
+      <!-- Dummy Job Listings (20 entries) -->
+      <div class="job" data-id="dummy-job-1" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 1</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> This is a dummy job listing for testing purposes.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="financial-analyst" data-category="finance" data-location="onsite">
-        <h3>Financial Analyst</h3>
-        <p><strong>Category:</strong> Finance</p>
-        <p><strong>Location:</strong> Onsite</p>
-        <p><strong>Description:</strong> Analyze financial data and help guide investment decisions.</p>
+      <div class="job" data-id="dummy-job-2" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 2</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Another dummy job added for testing filtering and applied status.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="sales-executive" data-category="sales" data-location="remote">
-        <h3>Sales Executive</h3>
-        <p><strong>Category:</strong> Sales</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> Responsible for generating new business opportunities.</p>
+      <div class="job" data-id="dummy-job-3" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 3</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Testing UI consistency for dummy job listings.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="data-scientist" data-category="tech" data-location="remote">
-        <h3>Data Scientist</h3>
-        <p><strong>Category:</strong> Technology</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> Analyze and interpret complex data to drive business decisions.</p>
+      <div class="job" data-id="dummy-job-4" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 4</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job listing for UI and functionality test.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="content-writer" data-category="marketing" data-location="onsite">
-        <h3>Content Writer</h3>
-        <p><strong>Category:</strong> Marketing</p>
-        <p><strong>Location:</strong> Onsite</p>
-        <p><strong>Description:</strong> Write and edit engaging content for our marketing materials.</p>
+      <div class="job" data-id="dummy-job-5" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 5</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> This dummy entry is for testing the application process.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="talent-acquisition" data-category="hr" data-location="onsite">
-        <h3>Talent Acquisition Specialist</h3>
-        <p><strong>Category:</strong> Human Resources</p>
-        <p><strong>Location:</strong> Onsite</p>
-        <p><strong>Description:</strong> Oversee the hiring process and collaborate with departments.</p>
+      <div class="job" data-id="dummy-job-6" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 6</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> More dummy job data to ensure filtering works correctly.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="sales-manager" data-category="sales" data-location="onsite">
-        <h3>Sales Manager</h3>
-        <p><strong>Category:</strong> Sales</p>
-        <p><strong>Location:</strong> Onsite</p>
-        <p><strong>Description:</strong> Manage the sales team and drive revenue generation.</p>
+      <div class="job" data-id="dummy-job-7" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 7</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Another dummy listing for our job portal demo.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="cloud-architect" data-category="tech" data-location="remote">
-        <h3>Cloud Architect</h3>
-        <p><strong>Category:</strong> Technology</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> Design and manage cloud computing solutions for clients.</p>
+      <div class="job" data-id="dummy-job-8" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 8</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job entry to test the apply functionality.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="seo-specialist" data-category="marketing" data-location="remote">
-        <h3>SEO Specialist</h3>
-        <p><strong>Category:</strong> Marketing</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> Optimize content for search engines to increase visibility.</p>
+      <div class="job" data-id="dummy-job-9" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 9</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job for testing filtering and job application features.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="investment-analyst" data-category="finance" data-location="remote">
-        <h3>Investment Analyst</h3>
-        <p><strong>Category:</strong> Finance</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> Provide investment recommendations and financial insights.</p>
+      <div class="job" data-id="dummy-job-10" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 10</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Tenth dummy job listing for our job portal interface.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <div class="job" data-id="hr-coordinator" data-category="hr" data-location="remote">
-        <h3>HR Coordinator</h3>
-        <p><strong>Category:</strong> Human Resources</p>
-        <p><strong>Location:</strong> Remote</p>
-        <p><strong>Description:</strong> Assist with day-to-day HR tasks, including employee relations.</p>
+      <div class="job" data-id="dummy-job-11" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 11</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Additional dummy job entry for testing different aspects of the UI.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-12" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 12</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> More dummy data to simulate a populated job board.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-13" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 13</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job listing number 13 for testing consistency.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-14" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 14</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Another entry in our dummy job series for testing.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-15" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 15</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job listing fifteen for user interface verification.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-16" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 16</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job 16 to help test filtering and persistence.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-17" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 17</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Another dummy job for our extensive dummy listings.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-18" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 18</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Dummy job 18 to help complete our set of test entries.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-19" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 19</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> Second-to-last dummy job for our job portal demonstration.</p>
+        <a href="#" class="apply-btn">Apply</a>
+      </div>
+
+      <div class="job" data-id="dummy-job-20" data-category="dummy" data-location="dummy">
+        <h3>Dummy Job 20</h3>
+        <p><strong>Category:</strong> Dummy</p>
+        <p><strong>Location:</strong> Dummy</p>
+        <p><strong>Description:</strong> The final dummy job listing, rounding out 20 dummy job entries.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
     </section>
@@ -187,7 +260,37 @@
   </footer>
 
   <script>
-    // Function to update applied buttons from localStorage on page load
+    // --- Dynamic Navbar ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.getElementById("navLinks");
+      const userEmail = localStorage.getItem("user");
+      
+      if (userEmail) {
+        // User is logged in
+        navLinks.innerHTML = `
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        `;
+      } else {
+        // No user logged in
+        navLinks.innerHTML = `
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        `;
+      }
+    });
+
+    // Logout function clears user data and applied jobs from localStorage
+    function logout() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("appliedJobs");
+      window.location.href = "login.html";
+    }
+
+    // --- Applied Jobs Button Functionality ---
     function updateAppliedButtons() {
       const appliedJobs = JSON.parse(localStorage.getItem("appliedJobs")) || [];
       document.querySelectorAll('.job').forEach(job => {
@@ -201,7 +304,7 @@
       });
     }
 
-    // Filter functionality
+    // --- Job Filter Functionality ---
     document.getElementById('job-filter').addEventListener('submit', function(event) {
       event.preventDefault();
 
@@ -221,12 +324,20 @@
       });
     });
 
-    // Apply button functionality: alert details, update button appearance, persist state,
-    // and call the backend to record the application.
+    // --- Apply Button Functionality ---
     const applyButtons = document.querySelectorAll('.job-listings .job .apply-btn');
     applyButtons.forEach(button => {
       button.addEventListener('click', function(event) {
         event.preventDefault();
+        
+        // Check if user is logged in first
+        const userEmail = localStorage.getItem("user");
+        if (!userEmail) {
+          alert("User not logged in!");
+          return;
+        }
+        
+        // Proceed with applying for the job if logged in
         const jobContainer = this.closest('.job');
         const jobId = jobContainer.getAttribute('data-id');
         const jobTitle = jobContainer.querySelector('h3').textContent;
@@ -234,34 +345,23 @@
         const jobLocation = jobContainer.getAttribute('data-location');
         // Assuming the third paragraph holds the description
         const jobDescription = jobContainer.querySelectorAll('p')[2].textContent;
-
+  
         alert(`You have applied for ${jobTitle}.\nCategory: ${jobCategory}\nLocation: ${jobLocation}\nDescription: ${jobDescription}`);
-
-        // Update the button's UI
+  
+        // Update the button UI only if the user is logged in
         this.style.backgroundColor = 'blue';
         this.textContent = "Applied";
         this.disabled = true;
-
-        // Save applied job's ID in localStorage so it's persisted on reload
+  
+        // Persist the applied job in localStorage
         let appliedJobs = JSON.parse(localStorage.getItem("appliedJobs")) || [];
         if (!appliedJobs.includes(jobId)) {
           appliedJobs.push(jobId);
           localStorage.setItem("appliedJobs", JSON.stringify(appliedJobs));
         }
-
-        // Retrieve userEmail stored on login
-        const userEmail = localStorage.getItem("user");
-        if (!userEmail) {
-          alert("User not logged in!");
-          return;
-        }
-
-        // Call the backend endpoint to record the application.
-        
       });
     });
 
-    // Update buttons on page load
     document.addEventListener('DOMContentLoaded', updateAppliedButtons);
   </script>
 </body>
