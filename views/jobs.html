@@ -7,27 +7,13 @@
   <title>Jobs - Job Portal</title>
   <link rel="stylesheet" href="/jobs.css">
   <link rel="stylesheet" href="/styles.css">
-  <style>
-    .apply-btn {
-      background-color: green;
-      color: white;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .apply-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
     <div class="nav-container">
-      <h1 class="logo">Job Portal</h1>
+      <i class="fa-solid fa-suitcase"></i>
+      <h1 class="logo"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M176 56l0 40 160 0 0-40c0-4.4-3.6-8-8-8L184 48c-4.4 0-8 3.6-8 8zM128 96l0-40c0-30.9 25.1-56 56-56L328 0c30.9 0 56 25.1 56 56l0 40 0 32 0 352-256 0 0-352 0-32zM64 96l32 0 0 384-32 0c-35.3 0-64-28.7-64-64L0 160c0-35.3 28.7-64 64-64zM448 480l-32 0 0-384 32 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64z"/></svg></div>Job Portal</h1>
       <ul class="nav-links" id="navLinks">
         <!-- Nav items will be injected dynamically -->
       </ul>
@@ -47,7 +33,6 @@
           <option value="hr">Human Resources</option>
           <option value="sales">Sales</option>
           <option value="finance">Finance</option>
-          <option value="dummy">Dummy</option>
         </select>
 
         <label for="location">Location</label>
@@ -55,7 +40,6 @@
           <option value="all">All Locations</option>
           <option value="remote">Remote</option>
           <option value="onsite">Onsite</option>
-          <option value="dummy">Dummy</option>
         </select>
 
         <button type="submit" class="apply-btn">Apply Filters</button>
@@ -91,166 +75,165 @@
         <a href="#" class="apply-btn">Apply</a>
       </div>
 
-      <!-- Dummy Job Listings (20 entries) -->
-      <div class="job" data-id="dummy-job-1" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 1</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> This is a dummy job listing for testing purposes.</p>
+      <div class="job" data-id="dummy-job-1" data-category="Technology" data-location="Remote">
+        <h3>Frontend Developer</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Build responsive UIs using React.js and modern JavaScript frameworks.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-2" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 2</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Another dummy job added for testing filtering and applied status.</p>
+      
+      <div class="job" data-id="dummy-job-2" data-category="Marketing" data-location="Onsite">
+        <h3>SEO Specialist</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Optimize website content and increase search engine visibility.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-3" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 3</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Testing UI consistency for dummy job listings.</p>
+      
+      <div class="job" data-id="dummy-job-3" data-category="Human Resources" data-location="Remote">
+        <h3>HR Generalist</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Support daily HR activities and assist in recruitment processes.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-4" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 4</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job listing for UI and functionality test.</p>
+      
+      <div class="job" data-id="dummy-job-4" data-category="Sales" data-location="Onsite">
+        <h3>Sales Associate</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Assist customers and close sales in a fast-paced environment.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-5" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 5</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> This dummy entry is for testing the application process.</p>
+      
+      <div class="job" data-id="dummy-job-5" data-category="Finance" data-location="Remote">
+        <h3>Junior Accountant</h3>
+        <p><strong>Category:</strong> Finance</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Maintain financial records and prepare reports for audits.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-6" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 6</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> More dummy job data to ensure filtering works correctly.</p>
+      
+      <div class="job" data-id="dummy-job-6" data-category="Technology" data-location="Onsite">
+        <h3>Backend Developer</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Design APIs and manage server-side logic using Node.js.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-7" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 7</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Another dummy listing for our job portal demo.</p>
+      
+      <div class="job" data-id="dummy-job-7" data-category="Marketing" data-location="Remote">
+        <h3>Content Strategist</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Develop and manage content strategy across platforms.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-8" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 8</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job entry to test the apply functionality.</p>
+      
+      <div class="job" data-id="dummy-job-8" data-category="Human Resources" data-location="Onsite">
+        <h3>Recruitment Specialist</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Source, screen, and interview candidates for open roles.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-9" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 9</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job for testing filtering and job application features.</p>
+      
+      <div class="job" data-id="dummy-job-9" data-category="Sales" data-location="Remote">
+        <h3>Business Development Rep</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Generate leads and build client relationships for growth.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-10" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 10</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Tenth dummy job listing for our job portal interface.</p>
+      
+      <div class="job" data-id="dummy-job-10" data-category="Finance" data-location="Onsite">
+        <h3>Payroll Executive</h3>
+        <p><strong>Category:</strong> Finance</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Manage payroll processing and employee compensation.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-11" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 11</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Additional dummy job entry for testing different aspects of the UI.</p>
+      
+      <div class="job" data-id="dummy-job-11" data-category="Technology" data-location="Remote">
+        <h3>DevOps Engineer</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Automate infrastructure and manage CI/CD pipelines.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-12" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 12</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> More dummy data to simulate a populated job board.</p>
+      
+      <div class="job" data-id="dummy-job-12" data-category="Marketing" data-location="Onsite">
+        <h3>Brand Manager</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Build brand strategy and lead campaigns for awareness.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-13" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 13</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job listing number 13 for testing consistency.</p>
+      
+      <div class="job" data-id="dummy-job-13" data-category="Human Resources" data-location="Remote">
+        <h3>People Operations Associate</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Coordinate employee programs and engagement activities.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-14" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 14</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Another entry in our dummy job series for testing.</p>
+      
+      <div class="job" data-id="dummy-job-14" data-category="Sales" data-location="Onsite">
+        <h3>Account Manager</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Manage client accounts and deliver business solutions.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-15" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 15</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job listing fifteen for user interface verification.</p>
+      
+      <div class="job" data-id="dummy-job-15" data-category="Finance" data-location="Remote">
+        <h3>Investment Analyst</h3>
+        <p><strong>Category:</strong> Finance</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Conduct market research and recommend investment options.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-16" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 16</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job 16 to help test filtering and persistence.</p>
+      
+      <div class="job" data-id="dummy-job-16" data-category="Technology" data-location="Onsite">
+        <h3>QA Tester</h3>
+        <p><strong>Category:</strong> Technology</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Perform manual and automated tests for software products.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-17" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 17</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Another dummy job for our extensive dummy listings.</p>
+      
+      <div class="job" data-id="dummy-job-17" data-category="Marketing" data-location="Remote">
+        <h3>Social Media Manager</h3>
+        <p><strong>Category:</strong> Marketing</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Grow social presence and engage users across platforms.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-18" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 18</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Dummy job 18 to help complete our set of test entries.</p>
+      
+      <div class="job" data-id="dummy-job-18" data-category="Human Resources" data-location="Onsite">
+        <h3>Employee Relations Officer</h3>
+        <p><strong>Category:</strong> Human Resources</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Handle workplace issues and support employee well-being.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-19" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 19</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> Second-to-last dummy job for our job portal demonstration.</p>
+      
+      <div class="job" data-id="dummy-job-19" data-category="Sales" data-location="Remote">
+        <h3>Territory Sales Manager</h3>
+        <p><strong>Category:</strong> Sales</p>
+        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Description:</strong> Expand sales operations across assigned regions.</p>
         <a href="#" class="apply-btn">Apply</a>
       </div>
-
-      <div class="job" data-id="dummy-job-20" data-category="dummy" data-location="dummy">
-        <h3>Dummy Job 20</h3>
-        <p><strong>Category:</strong> Dummy</p>
-        <p><strong>Location:</strong> Dummy</p>
-        <p><strong>Description:</strong> The final dummy job listing, rounding out 20 dummy job entries.</p>
+      
+      <div class="job" data-id="dummy-job-20" data-category="Finance" data-location="Onsite">
+        <h3>Budget Analyst</h3>
+        <p><strong>Category:</strong> Finance</p>
+        <p><strong>Location:</strong> Onsite</p>
+        <p><strong>Description:</strong> Monitor budget allocations and financial performance.</p>
         <a href="#" class="apply-btn">Apply</a>
-      </div>
+      </div>      
     </section>
   </div>
 
@@ -305,24 +288,31 @@
     }
 
     // --- Job Filter Functionality ---
-    document.getElementById('job-filter').addEventListener('submit', function(event) {
-      event.preventDefault();
+    document.getElementById('job-filter').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent form from reloading the page
 
-      const categoryFilter = document.getElementById('category').value;
-      const locationFilter = document.getElementById('location').value;
+    const selectedCategory = document.getElementById('category').value;
+    const selectedLocation = document.getElementById('location').value;
 
-      document.querySelectorAll('.job').forEach(job => {
-        const jobCategory = job.getAttribute('data-category');
-        const jobLocation = job.getAttribute('data-location');
+    const jobs = document.querySelectorAll('.job');
 
-        if ((categoryFilter === 'all' || categoryFilter === jobCategory) &&
-            (locationFilter === 'all' || locationFilter === jobLocation)) {
-          job.style.display = 'block';
-        } else {
-          job.style.display = 'none';
-        }
-      });
+    jobs.forEach(job => {
+      const jobCategory = job.getAttribute('data-category').toLowerCase();
+      const jobLocation = job.getAttribute('data-location').toLowerCase();
+
+      const matchesCategory = (selectedCategory === 'all' || 
+        (selectedCategory === 'tech' && jobCategory === 'technology') || 
+        selectedCategory === jobCategory);
+        
+      const matchesLocation = (selectedLocation === 'all' || selectedLocation === jobLocation);
+
+      if (matchesCategory && matchesLocation) {
+        job.style.display = 'block';
+      } else {
+        job.style.display = 'none';
+      }
     });
+  });
 
     // --- Apply Button Functionality ---
     const applyButtons = document.querySelectorAll('.job-listings .job .apply-btn');
