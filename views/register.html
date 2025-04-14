@@ -14,7 +14,7 @@
       <div class="outercontainer">
   <div class="register-container">
     <h2>Create an Account</h2>
-    <form action="/register" method="POST" enctype="multipart/form-data">
+    <form action="/register" method="POST" enctype="multipart/form-data" onsubmit="return authenticateUser()">
       <div class="input-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Your full name" required>
@@ -60,5 +60,36 @@
     </form>
   </div>
 </div>
+<script>
+  function validateEmail(email) {
+    // Simple regex for email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function validatePassword(password) {
+    // Example: minimum 6 characters required
+    return password.length >= 6;
+  }
+
+  function authenticateUser() {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (!validateEmail(email)) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+
+    if (!validatePassword(password)) {
+      alert('Password must be at least 6 characters long.');
+      return false;
+    }
+
+    alert('Register successful!');
+    return true;
+  }
+</script>
+
 </body>
 </html>
