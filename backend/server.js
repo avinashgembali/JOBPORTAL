@@ -48,17 +48,27 @@ app.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ email });
 
-    if (!user || user.password !== password) {
-      // Send error message if credentials are invalid
+    if (!user) {
+      // Email not found
       return res.send(`
         <script>
-          alert('Create an account or check your password.');
+          alert('Email not found. Please register first.');
           window.location.href = "/login.html"; 
         </script>
       `);
     }
 
-    // On success, save user info to localStorage (client-side) and redirect
+    if (user.password !== password) {
+      // Password incorrect
+      return res.send(`
+        <script>
+          alert('Incorrect password. Please try again.');
+          window.location.href = "/login.html"; 
+        </script>
+      `);
+    }
+
+    // On success
     res.send(`
       <script>
         localStorage.setItem("userEmail", "${user.email}");
@@ -69,6 +79,7 @@ app.post('/login', async (req, res) => {
     res.status(500).send('Login error: ' + err.message);
   }
 });
+
 
 // Register New User
 app.post('/register', upload.single('resume'), async (req, res) => {
