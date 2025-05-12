@@ -81,7 +81,7 @@
     // Function to fetch the user's profile information using an API call
     async function fetchUserProfile(userEmail) {
       try {
-        const res = await fetch(`/api/profile?email=${userEmail}`);
+        const res = await fetch(`/profile?email=${userEmail}`);
         const data = await res.json();
 
         if (res.ok) {

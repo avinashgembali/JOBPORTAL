@@ -141,7 +141,7 @@ app.post('/update-profile', upload.single('resume'), async (req, res) => {
 });
 
 // Get user profile by email
-app.get('/api/profile', async (req, res) => {
+app.get('/profile', async (req, res) => {
   const { email } = req.query;
 
   if (!email) return res.status(400).json({ error: 'Email is required' });
