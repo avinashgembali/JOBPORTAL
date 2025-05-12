@@ -166,8 +166,6 @@ app.get('/api/profile', async (req, res) => {
 
 // Logout Route
 app.get('/logout', (req, res) => {
-  // Clearing the authentication cookie (if using one)
-  res.clearCookie('authToken');
   res.redirect('/login.html');
 });
 
