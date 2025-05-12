@@ -10,29 +10,45 @@
   <script>
     // Check if user is already logged in
     window.onload = () => {
-      const user = localStorage.getItem('user');
+      const user = localStorage.getItem('userEmail');
       if (user) {
         // Redirect to home page if user is already logged in
         window.location.href = 'index.html';
       }
     }
 
-    // Handle form submission
-    function handleLogin(event) {
-      event.preventDefault(); // Prevent default form submission
+   // Handle form submission
+  function handleLogin(event) {
+    event.preventDefault(); // Prevent default form submission
 
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-      // Basic validation, you can expand this with backend validation
-      if (email && password) {
-        // Save the email in localStorage upon successful login (you can modify this with an API call)
-        localStorage.setItem('user', email);
-        window.location.href = 'index.html'; // Redirect to home page after successful login
-      } else {
-        alert('Please enter both email and password.');
-      }
+    if (email && password) {
+      // Send login request to the backend
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      })
+      .then(response => response.text())
+      .then(data => {
+        // The backend returns HTML with a script, so just render it
+        document.open();
+        document.write(data);
+        document.close();
+      })
+      .catch(error => {
+        alert('Login failed. Try again later.');
+        console.error('Error:', error);
+      });
+    } else {
+      alert('Please enter both email and password.');
     }
+  }
+
   </script>
 </head>
 <body>

@@ -246,7 +246,7 @@
     // --- Dynamic Navbar ---
     document.addEventListener("DOMContentLoaded", () => {
       const navLinks = document.getElementById("navLinks");
-      const userEmail = localStorage.getItem("user");
+      const userEmail = localStorage.getItem("userEmail");
       
       if (userEmail) {
         // User is logged in
@@ -268,7 +268,7 @@
 
     // Logout function clears user data and applied jobs from localStorage
     function logout() {
-      localStorage.removeItem("user");
+      localStorage.removeItem("userEmail");
       localStorage.removeItem("appliedJobs");
       window.location.href = "login.html";
     }
@@ -321,7 +321,7 @@
         event.preventDefault();
         
         // Check if user is logged in first
-        const userEmail = localStorage.getItem("user");
+        const userEmail = localStorage.getItem("userEmail");
         if (!userEmail) {
           alert("User not logged in!");
           return;

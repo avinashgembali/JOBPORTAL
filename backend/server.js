@@ -53,7 +53,7 @@ app.post('/login', async (req, res) => {
       return res.send(`
         <script>
           alert('Create an account or check your password.');
-          window.location.href = "/register"; 
+          window.location.href = "/login.html"; 
         </script>
       `);
     }

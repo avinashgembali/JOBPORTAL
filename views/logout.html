@@ -12,10 +12,6 @@
   </div>
 
   <script>
-    // Clear the stored authentication data (JWT token, user data, etc.)
-    localStorage.removeItem('authToken'); // If the token is stored in localStorage
-    sessionStorage.removeItem('authToken'); // If using sessionStorage
-
     // Redirect to the login page after clearing data
     setTimeout(function() {
       window.location.href = '/'; // Or wherever your login page is
