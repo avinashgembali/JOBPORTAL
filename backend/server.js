@@ -175,10 +175,6 @@ app.get('/profile', async (req, res) => {
   }
 });
 
-// Logout Route
-app.get('/logout', (req, res) => {
-  res.redirect('/login.html');
-});
 
 // Start the server
 app.listen(PORT, () => {
