@@ -180,8 +180,6 @@ app.get('/logout', (req, res) => {
   res.redirect('/login.html');
 });
 
-// NEW: Endpoint to Apply to a Job
-// Endpoint to create a new job
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
